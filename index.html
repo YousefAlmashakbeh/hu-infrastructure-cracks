@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HU Infrastructure Cracks — The Hashemite University Open Dataset</title>
-<meta name="description" content="Open-source concrete crack dataset for infrastructure monitoring. Collected at The Hashemite University, Jordan.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Open-source concrete crack dataset — 48 cracks, 600+ images. The Hashemite University, Jordan. CC BY 4.0.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0e0d;--bg2:#111815;--bg3:#161e1a;--card:#1a2420;--card2:#1f2d28;--border:#2a3d35;--border2:#344d43;--green:#3ddc84;--green2:#2ab86a;--green3:#1a7a46;--gd:rgba(61,220,132,0.08);--gd2:rgba(61,220,132,0.15);--amber:#f5a623;--red:#e05c5c;--blue:#5b9cf6;--text:#e8f0eb;--text2:#9ab5a5;--text3:#5e7a6a;--serif:'DM Serif Display',serif;--sans:'Outfit',sans-serif;--mono:'DM Mono',monospace}
+:root{--bg:#0a0e0d;--bg2:#111815;--bg3:#161e1a;--card:#1a2420;--border:#2a3d35;--border2:#344d43;--green:#3ddc84;--green2:#2ab86a;--gd:rgba(61,220,132,0.08);--gd2:rgba(61,220,132,0.15);--amber:#f5a623;--red:#e05c5c;--blue:#5b9cf6;--text:#e8f0eb;--text2:#9ab5a5;--text3:#5e7a6a;--serif:'DM Serif Display',serif;--sans:'Outfit',sans-serif;--mono:'DM Mono',monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:rgba(10,14,13,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:rgba(10,14,13,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-mark{width:32px;height:32px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center}
 .nav-mark svg{width:18px;height:18px}
@@ -24,54 +23,48 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta{background:var(--green);color:#0a0e0d;border:none;border-radius:8px;padding:8px 18px;font-size:13px;font-weight:600;font-family:var(--sans);cursor:pointer;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--green2)}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 40px 80px;text-align:center;position:relative}
-.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(61,220,132,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,220,132,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 30%,transparent 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(61,220,132,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,220,132,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 30%,transparent 100%)}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gd);border:1px solid rgba(61,220,132,.2);border-radius:100px;padding:6px 16px;margin-bottom:32px;font-size:12px;font-weight:500;color:var(--green);letter-spacing:.05em;animation:fadeUp .6s ease both}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
 .hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,80px);font-weight:400;line-height:1.1;color:var(--text);animation:fadeUp .6s .1s ease both;margin-bottom:12px}
 .hero h1 em{font-style:italic;color:var(--green)}
-.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--text2);max-width:600px;animation:fadeUp .6s .2s ease both;margin-bottom:40px;font-weight:300}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--text2);max-width:600px;animation:fadeUp .6s .2s ease both;margin-bottom:40px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .3s ease both}
 .btn-primary{background:var(--green);color:#0a0e0d;border:none;border-radius:10px;padding:14px 28px;font-size:14px;font-weight:600;font-family:var(--sans);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{background:var(--green2);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;padding:14px 28px;font-size:14px;font-weight:400;font-family:var(--sans);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;padding:14px 28px;font-size:14px;font-family:var(--sans);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-outline:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}
-.stats-bar{display:flex;border:1px solid var(--border);border-radius:16px;background:var(--card);overflow:hidden;max-width:700px;margin:60px auto 0;animation:fadeUp .6s .4s ease both}
+.stats-bar{display:flex;border:1px solid var(--border);border-radius:16px;background:var(--card);overflow:hidden;max-width:800px;margin:60px auto 0;animation:fadeUp .6s .4s ease both}
 .stat{flex:1;padding:20px 24px;text-align:center;border-right:1px solid var(--border)}
 .stat:last-child{border-right:none}
-.stat-num{font-family:var(--mono);font-size:28px;font-weight:500;color:var(--green);display:block}
+.stat-num{font-family:var(--mono);font-size:26px;font-weight:500;color:var(--green);display:block}
 .stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 section{position:relative;z-index:1}
 .container{max-width:1100px;margin:0 auto;padding:0 40px}
 .sec-label{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 .sec-title{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--text);margin-bottom:16px;line-height:1.15}
-.sec-sub{font-size:15px;color:var(--text2);max-width:560px;font-weight:300}
-.about{padding:100px 0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.features{display:flex;flex-direction:column;gap:20px;margin-top:36px}
-.feature{display:flex;gap:14px;align-items:flex-start}
-.feat-icon{width:36px;height:36px;border-radius:8px;background:var(--gd);border:1px solid rgba(61,220,132,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-size:16px}
-.feat-text h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
-.feat-text p{font-size:13px;color:var(--text2);line-height:1.5}
-.about-visual{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px}
-.schema{display:flex;flex-direction:column;gap:10px}
-.s-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)}
-.s-key{font-family:var(--mono);font-size:11px;color:var(--green);min-width:110px}
-.s-val{font-size:12px;color:var(--text2)}
-.s-badge{margin-left:auto;font-size:10px;padding:2px 8px;border-radius:4px;font-family:var(--mono)}
-.bt{background:rgba(91,156,246,.15);color:var(--blue)}
-.br{background:rgba(61,220,132,.1);color:var(--green)}
+.sec-sub{font-size:15px;color:var(--text2);max-width:560px}
+
+/* LICENSE BANNER */
+.license-banner{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--text2)}
+.lic-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gd);border:1px solid rgba(61,220,132,.3);border-radius:6px;padding:4px 12px;font-family:var(--mono);font-size:12px;color:var(--green);font-weight:500}
+.lic-sep{color:var(--border2)}
+
+/* DATASET */
 .dataset{padding:100px 0;background:var(--bg2)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 36px}
-.f-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;font-family:var(--sans);cursor:pointer;transition:all .2s;font-weight:400}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 20px}
+.f-btn{padding:7px 14px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;font-family:var(--sans);cursor:pointer;transition:all .2s}
 .f-btn:hover,.f-btn.active{border-color:var(--green);color:var(--green);background:var(--gd)}
+.results-count{font-size:12px;color:var(--text3);font-family:var(--mono);margin-bottom:20px}
 .crack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .c-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all .25s;animation:fadeUp .4s ease both}
 .c-card:hover{border-color:var(--green);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.c-img{width:100%;height:180px;background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid var(--border)}
+.c-img{width:100%;height:160px;background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid var(--border);position:relative}
 .c-img svg{opacity:.2}
 .c-img span{font-size:11px;color:var(--text3);font-family:var(--mono)}
+.c-watermark{position:absolute;bottom:6px;right:8px;font-size:9px;font-family:var(--mono);color:rgba(255,255,255,0.15);letter-spacing:.05em}
 .c-body{padding:16px}
 .c-id{font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:6px}
 .c-type{font-size:14px;font-weight:500;color:var(--text);margin-bottom:8px}
@@ -83,302 +76,330 @@ section{position:relative;z-index:1}
 .c-meta{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 .c-mi{font-size:11px;color:var(--text3)}
 .c-mi span{color:var(--text2);display:block;font-size:12px}
+
+/* PROTOCOL */
 .protocol{padding:100px 0}
 .proto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-.proto-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .2s}
-.proto-card:hover{border-color:var(--border2)}
+.proto-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
 .proto-num{font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:16px}
 .proto-card h3{font-size:15px;font-weight:500;color:var(--text);margin-bottom:8px}
 .proto-card p{font-size:13px;color:var(--text2);line-height:1.6}
 .proto-card ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:5px}
 .proto-card ul li{font-size:12px;color:var(--text2);display:flex;align-items:center;gap:8px}
 .proto-card ul li::before{content:'—';color:var(--green);font-family:var(--mono)}
-.naming{background:var(--bg2);padding:100px 0}
-.naming-box{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:36px;max-width:700px}
-.nf{font-family:var(--mono);font-size:15px;color:var(--text);margin-bottom:20px;line-height:1.8}
-.nf span{color:var(--green)}
-.ne{font-family:var(--mono);font-size:13px;color:var(--text2);background:var(--bg3);padding:12px 16px;border-radius:8px;border-left:3px solid var(--green)}
-.nl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.li{display:flex;gap:10px;align-items:flex-start}
-.lk{font-family:var(--mono);font-size:11px;color:var(--green);min-width:90px;flex-shrink:0}
-.lv{font-size:12px;color:var(--text2);line-height:1.4}
-.contribute{padding:100px 0}
-.contrib-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-.cf{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
-.cf h3{font-size:16px;font-weight:500;color:var(--text);margin-bottom:20px}
-.fg{margin-bottom:14px}
-.fg label{display:block;font-size:11px;color:var(--text3);margin-bottom:6px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
-.fg input,.fg select,.fg textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--sans);font-size:13px;padding:10px 14px;outline:none;transition:border-color .2s;appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green)}
-.fg textarea{resize:vertical;min-height:80px}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.upzone{border:2px dashed var(--border2);border-radius:10px;padding:24px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:14px}
-.upzone:hover{border-color:var(--green);background:var(--gd)}
-.upzone p{font-size:13px;color:var(--text2);margin-top:8px}
-.upzone span{font-size:11px;color:var(--text3);font-family:var(--mono)}
-.ci{display:flex;flex-direction:column;gap:20px}
-.ic{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
-.ic h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.ic p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* COPYRIGHT SECTION */
+.copyright{padding:100px 0;background:var(--bg2)}
+.copy-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.copy-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
+.copy-card h3{font-size:15px;font-weight:500;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.copy-card p{font-size:13px;color:var(--text2);line-height:1.7}
+.copy-icon{width:32px;height:32px;border-radius:8px;background:var(--gd);border:1px solid rgba(61,220,132,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)}
+.allowed{border-left:3px solid var(--green)}
+.notallowed{border-left:3px solid var(--red)}
+.rule-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.rule-list li{font-size:13px;color:var(--text2);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.rule-yes::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0}
+.rule-no::before{content:'✗';color:var(--red);font-weight:600;flex-shrink:0}
+.watermark-demo{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:16px;text-align:center;position:relative;overflow:hidden}
+.watermark-demo-img{width:100%;height:120px;background:var(--bg3);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-bottom:10px}
+.wm-text{position:absolute;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.25);transform:rotate(-30deg);white-space:nowrap;letter-spacing:.1em;user-select:none}
+.wm-label{font-size:11px;color:var(--text3);font-family:var(--mono)}
+
+/* DOWNLOAD SECTION */
+.download-sec{padding:100px 0}
+.dl-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:36px}
+.dl-agreement{background:var(--bg);border:1px solid var(--border2);border-radius:10px;padding:20px;margin-bottom:24px;font-size:13px;color:var(--text2);line-height:1.7}
+.dl-agreement strong{color:var(--text)}
+.dl-agreement .agreement-title{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.dl-check{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px;cursor:pointer}
+.dl-check input{width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:var(--green);cursor:pointer}
+.dl-check span{font-size:13px;color:var(--text2);line-height:1.5}
+.dl-check span strong{color:var(--text)}
+.dl-btn-group{display:flex;gap:12px;flex-wrap:wrap}
+.dl-btn{background:var(--green);color:#0a0e0d;border:none;border-radius:10px;padding:12px 24px;font-size:13px;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;opacity:0.4;pointer-events:none}
+.dl-btn.active{opacity:1;pointer-events:auto}
+.dl-btn.active:hover{background:var(--green2);transform:translateY(-1px)}
+.dl-btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;padding:12px 24px;font-size:13px;font-family:var(--sans);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;opacity:0.4;pointer-events:none}
+.dl-btn-outline.active{opacity:1;pointer-events:auto}
+.dl-btn-outline.active:hover{border-color:var(--green);color:var(--green)}
+
+/* CITATION */
 .citation{background:var(--bg2);padding:100px 0}
-.cit-box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-top:32px;position:relative;overflow:hidden}
+.cit-box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-top:24px;position:relative;overflow:hidden}
 .cit-box::before{content:'"';position:absolute;top:-10px;left:20px;font-family:var(--serif);font-size:120px;color:var(--green);opacity:.06;line-height:1}
-.cit-txt{font-family:var(--mono);font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+.cit-txt{font-family:var(--mono);font-size:12px;color:var(--text2);line-height:1.9;margin-bottom:16px}
 .cit-txt strong{color:var(--green)}
 .cit-actions{display:flex;gap:10px}
 .btn-copy{background:var(--gd);border:1px solid rgba(61,220,132,.2);color:var(--green);border-radius:8px;padding:8px 16px;font-size:12px;font-family:var(--mono);cursor:pointer;transition:all .2s}
 .btn-copy:hover{background:var(--gd2)}
+
+/* TEAM */
 .team{padding:100px 0}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
 .tc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center}
-.ta{width:60px;height:60px;border-radius:50%;margin:0 auto 14px;background:var(--gd);border:2px solid rgba(61,220,132,.2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;color:var(--green)}
+.ta{width:56px;height:56px;border-radius:50%;margin:0 auto 14px;background:var(--gd);border:2px solid rgba(61,220,132,.2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--green)}
 .tc h3{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
-.tc p{font-size:12px;color:var(--text2);margin-bottom:8px}
+.tc p{font-size:12px;color:var(--text2);margin-bottom:6px}
 .tc .role{font-size:11px;color:var(--green);font-family:var(--mono)}
+
+/* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 40px 32px}
-.fi{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
-.fb{max-width:300px}
-.fb p{font-size:13px;color:var(--text3);margin-top:10px;line-height:1.6}
-.fl h4{font-size:12px;font-weight:500;color:var(--text2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+.fi{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.fb p{font-size:13px;color:var(--text3);margin-top:10px;line-height:1.6;max-width:280px}
+.fl h4{font-size:11px;font-weight:500;color:var(--text2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
 .fl a{display:block;font-size:13px;color:var(--text3);text-decoration:none;margin-bottom:8px;transition:color .2s}
 .fl a:hover{color:var(--green)}
 .fb2{max-width:1100px;margin:32px auto 0;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:12px;color:var(--text3);flex-wrap:wrap;gap:8px}
 .lic{display:inline-flex;align-items:center;gap:6px;background:var(--gd);border:1px solid rgba(61,220,132,.2);border-radius:6px;padding:3px 10px;font-family:var(--mono);font-size:11px;color:var(--green)}
-.modal-ov{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+.copy-footer{font-family:var(--mono);font-size:11px;color:var(--text3)}
+
+/* MODAL */
+.modal-ov{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
 .modal-ov.open{display:flex}
-.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative}
 .m-close{position:absolute;top:16px;right:16px;background:var(--card);border:1px solid var(--border);border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);font-size:18px}
 .m-close:hover{color:var(--text)}
-.modal h2{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:20px}
-.mf{display:flex;flex-direction:column;gap:0}
+.modal h2{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:6px}
+.modal-license{background:var(--gd);border:1px solid rgba(61,220,132,.2);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--green);font-family:var(--mono);margin-bottom:20px}
+.mf{display:flex;flex-direction:column}
 .mr{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
 .mr:last-child{border-bottom:none}
 .mk{font-family:var(--mono);font-size:12px;color:var(--text3)}
-.mv{font-size:13px;color:var(--text);text-align:right}
+.mv{font-size:13px;color:var(--text);text-align:right;max-width:300px}
+.modal-dl-note{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:16px;font-size:12px;color:var(--text2);line-height:1.6}
+.modal-dl-note strong{color:var(--amber)}
+
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.container{padding:0 20px}.hero{padding:100px 20px 60px}.stats-bar{flex-direction:column}.stat{border-right:none;border-bottom:1px solid var(--border)}.stat:last-child{border-bottom:none}.about-grid,.contrib-grid{grid-template-columns:1fr}.proto-grid,.team-grid{grid-template-columns:1fr}.nl{grid-template-columns:1fr}footer{padding:40px 20px 24px}.fi{flex-direction:column}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.container{padding:0 20px}.hero{padding:100px 20px 60px}.stats-bar{flex-wrap:wrap}.stat{min-width:50%;border-right:none;border-bottom:1px solid var(--border)}.proto-grid,.team-grid,.copy-grid{grid-template-columns:1fr}footer{padding:40px 20px 24px}.fi{flex-direction:column}}
 </style>
 </head>
 <body>
+
 <nav>
   <a class="nav-logo" href="#">
-    <div class="nav-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#0a0e0d" stroke-width="2.5" stroke-linecap="round"><path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/><path d="M3 7 Q6 4 9 7" opacity=".5"/><path d="M15 17 Q18 20 21 17" opacity=".5"/></svg>
-    </div>
+    <div class="nav-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0e0d" stroke-width="2.5" stroke-linecap="round"><path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/><path d="M3 7 Q6 4 9 7" opacity=".5"/><path d="M15 17 Q18 20 21 17" opacity=".5"/></svg></div>
     <span class="nav-txt">HU<span>-</span>InfraCracks</span>
   </a>
   <div class="nav-links">
     <a href="#dataset">Dataset</a>
-    <a href="#protocol">Protocol</a>
-    <a href="#contribute">Contribute</a>
+    <a href="#copyright">License</a>
+    <a href="#download">Download</a>
     <a href="#citation">Cite</a>
     <a href="#team">Team</a>
   </div>
   <a href="https://github.com/YousefAlmashakbeh/hu-infrastructure-cracks" target="_blank" class="nav-cta">GitHub ↗</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
-  <div style="position:relative;z-index:1">
-    <div class="hero-badge"><div class="badge-dot"></div>Open Dataset · The Hashemite University · Jordan</div>
+  <div style="position:relative;z-index:1;width:100%;max-width:900px;margin:0 auto">
+    <div class="hero-badge"><div class="badge-dot"></div>Open Dataset · The Hashemite University · Jordan · CC BY 4.0</div>
     <h1>Infrastructure Crack<br><em>Atlas</em> for the World</h1>
-    <p class="hero-sub">An open-source concrete crack dataset for AI training, structural engineering research, and infrastructure monitoring — collected at The Hashemite University.</p>
+    <p class="hero-sub">An open-source concrete crack dataset for AI training, structural engineering research, and infrastructure monitoring — 48 professionally documented cracks from The Hashemite University.</p>
     <div class="hero-actions">
-      <a href="#dataset" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v14M6 10l6 6 6-6"/><path d="M3 20h18"/></svg>
-        Explore Dataset
-      </a>
-      <a href="#contribute" class="btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-        Contribute Data
-      </a>
+      <a href="#dataset" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Explore Dataset</a>
+      <a href="#download" class="btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v14M6 10l6 6 6-6"/><path d="M3 20h18"/></svg>Download Data</a>
     </div>
     <div class="stats-bar">
-      <div class="stat"><span class="stat-num">41</span><div class="stat-label">Crack Records</div></div>
-      <div class="stat"><span class="stat-num">615+</span><div class="stat-label">Total Images</div></div>
-      <div class="stat"><span class="stat-num">4</span><div class="stat-label">Structure Types</div></div>
+      <div class="stat"><span class="stat-num">48</span><div class="stat-label">Crack Records</div></div>
+      <div class="stat"><span class="stat-num">600+</span><div class="stat-label">Total Images</div></div>
+      <div class="stat"><span class="stat-num">3</span><div class="stat-label">Crack Types</div></div>
+      <div class="stat"><span class="stat-num">2</span><div class="stat-label">Structure Types</div></div>
       <div class="stat"><span class="stat-num">CC BY 4.0</span><div class="stat-label">License</div></div>
     </div>
   </div>
 </section>
 
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="sec-label">About the Dataset</div>
-        <h2 class="sec-title">Built for the global research community</h2>
-        <p class="sec-sub">A systematic, high-quality collection of concrete crack images captured at The Hashemite University campus using a professional protocol designed for AI model training.</p>
-        <div class="features">
-          <div class="feature">
-            <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-            <div class="feat-text"><h4>10–15 images per crack</h4><p>Far, medium, close-up from 3 angles, scale reference, 3 lighting conditions, and negative sample.</p></div>
-          </div>
-          <div class="feature">
-            <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-            <div class="feat-text"><h4>Standardized field data</h4><p>Every crack includes type, severity, width, length, surface conditions, and environment metadata.</p></div>
-          </div>
-          <div class="feature">
-            <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
-            <div class="feat-text"><h4>Open-source forever</h4><p>CC BY 4.0 license. Free to use, share, and build upon for any research or commercial purpose.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="about-visual">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:16px;letter-spacing:.08em">// crack record schema</div>
-        <div class="schema">
-          <div class="s-row"><span class="s-key">crack_id</span><span class="s-val">CR01 → CR041</span><span class="s-badge br">required</span></div>
-          <div class="s-row"><span class="s-key">type</span><span class="s-val">longitudinal / transverse / diagonal / hairline</span></div>
-          <div class="s-row"><span class="s-key">severity</span><span class="s-val">minor / moderate / severe</span></div>
-          <div class="s-row"><span class="s-key">structure</span><span class="s-val">column / wall / pavement / beam</span></div>
-          <div class="s-row"><span class="s-key">width_mm</span><span class="s-val">measured in millimeters</span><span class="s-badge bt">float</span></div>
-          <div class="s-row"><span class="s-key">length_mm</span><span class="s-val">measured in millimeters</span><span class="s-badge bt">float</span></div>
-          <div class="s-row"><span class="s-key">environment</span><span class="s-val">indoor / outdoor</span></div>
-          <div class="s-row"><span class="s-key">images[]</span><span class="s-val">10–15 photos per crack</span><span class="s-badge bt">array</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- LICENSE BANNER -->
+<div class="license-banner">
+  <span class="lic-badge">© 2026 The Hashemite University</span>
+  <span class="lic-sep">·</span>
+  <span>This dataset is licensed under <strong style="color:var(--text)">Creative Commons Attribution 4.0 (CC BY 4.0)</strong></span>
+  <span class="lic-sep">·</span>
+  <span>You must credit the authors when using this data</span>
+  <span class="lic-sep">·</span>
+  <a href="#copyright" style="color:var(--green);text-decoration:none">View full license →</a>
+</div>
 
+<!-- DATASET GALLERY -->
 <section class="dataset" id="dataset">
   <div class="container">
     <div class="sec-label">Dataset Gallery</div>
-    <h2 class="sec-title">Browse the crack records</h2>
-    <p class="sec-sub">Filter by structure type, crack type, or severity. Click any record to view full details and download.</p>
+    <h2 class="sec-title">Browse all 48 crack records</h2>
+    <p class="sec-sub">Collected at The Hashemite University — Faculty of Engineering. Filter by type, severity, or structure. Click any card for full details.</p>
     <div class="filters">
-      <button class="f-btn active" onclick="filterCracks('all',this)">All Records</button>
-      <button class="f-btn" onclick="filterCracks('longitudinal',this)">Longitudinal</button>
-      <button class="f-btn" onclick="filterCracks('transverse',this)">Transverse</button>
-      <button class="f-btn" onclick="filterCracks('diagonal',this)">Diagonal</button>
-      <button class="f-btn" onclick="filterCracks('hairline',this)">Hairline</button>
-      <button class="f-btn" onclick="filterCracks('column',this)">Column</button>
-      <button class="f-btn" onclick="filterCracks('wall',this)">Wall</button>
-      <button class="f-btn" onclick="filterCracks('pavement',this)">Pavement</button>
-      <button class="f-btn" onclick="filterCracks('beam',this)">Beam</button>
-      <button class="f-btn" onclick="filterCracks('severe',this)">Severe</button>
-      <button class="f-btn" onclick="filterCracks('moderate',this)">Moderate</button>
-      <button class="f-btn" onclick="filterCracks('minor',this)">Minor</button>
+      <button class="f-btn active" onclick="filterCracks('all',this)">All (48)</button>
+      <button class="f-btn" onclick="filterCracks('transverse',this)">Transverse (32)</button>
+      <button class="f-btn" onclick="filterCracks('longitudinal',this)">Longitudinal (17)</button>
+      <button class="f-btn" onclick="filterCracks('diagonal',this)">Diagonal (2)</button>
+      <button class="f-btn" onclick="filterCracks('moderate',this)">Moderate (30)</button>
+      <button class="f-btn" onclick="filterCracks('severe',this)">Severe (18)</button>
+      <button class="f-btn" onclick="filterCracks('pavement',this)">Pavement (32)</button>
+      <button class="f-btn" onclick="filterCracks('wall',this)">Wall (16)</button>
     </div>
+    <div class="results-count" id="resultsCount">Showing 48 records</div>
     <div class="crack-grid" id="crackGrid"></div>
   </div>
 </section>
 
+<!-- PROTOCOL -->
 <section class="protocol" id="protocol">
   <div class="container">
     <div class="sec-label">Data Collection Protocol</div>
     <h2 class="sec-title">Standardized for scientific accuracy</h2>
-    <p class="sec-sub">Every crack follows a strict photo acquisition protocol ensuring consistency and usability for AI training.</p>
+    <p class="sec-sub">Every crack follows a strict protocol. Engineer: Razan Al-Majali. Camera: Canon EOS R2 DSLR.</p>
     <div class="proto-grid">
       <div class="proto-card">
         <div class="proto-num">01 / Field Data</div>
         <h3>Crack Characteristics</h3>
-        <p>Each crack is documented with full physical measurements before photography.</p>
-        <ul><li>Type: longitudinal, transverse, diagonal, hairline</li><li>Severity: minor, moderate, severe</li><li>Width and length in mm</li><li>Surface: dry, wet, or dusty</li><li>Corrosion and water presence noted</li></ul>
+        <p>Full physical measurement before photography.</p>
+        <ul><li>Type: transverse, longitudinal, diagonal</li><li>Severity: moderate or severe</li><li>Width and length in mm</li><li>Surface condition: dry / wet / dusty</li><li>Corrosion and water presence noted</li></ul>
       </div>
       <div class="proto-card">
-        <div class="proto-num">02 / Photography</div>
-        <h3>Camera Settings Logged</h3>
-        <p>All camera parameters recorded for full reproducibility.</p>
-        <ul><li>Camera: DSLR high-resolution</li><li>Resolution: 4000×3000 px minimum</li><li>Zoom: 1x / 2x / 5x logged</li><li>Focus: auto and manual</li><li>Flash and stability recorded</li></ul>
+        <div class="proto-num">02 / Camera</div>
+        <h3>Canon EOS R2 DSLR</h3>
+        <p>Professional camera settings logged per crack.</p>
+        <ul><li>Resolution: 4000×3000 px minimum</li><li>Zoom: 1x (standard)</li><li>Focus: Auto mode</li><li>Stability: handheld</li><li>Orientation: landscape / portrait</li><li>Distance: estimated</li></ul>
       </div>
       <div class="proto-card">
         <div class="proto-num">03 / Photo Types</div>
         <h3>10–15 Images Per Crack</h3>
-        <p>Systematic multi-view acquisition for robust AI training data.</p>
-        <ul><li>Far view: 2–5 m context shot</li><li>Medium view: 1 m front</li><li>Close-up: 0°, +30°, −30°</li><li>Scale reference with ruler</li><li>3 lighting: sun, shadow, flash</li><li>Negative sample included</li></ul>
+        <p>Multi-view acquisition for AI training robustness.</p>
+        <ul><li>Far view: 2–5 m context</li><li>Medium view: 1 m front</li><li>Close-up: 0°, +30°, −30°</li><li>Scale reference with ruler</li><li>Lighting: sunny / shadow / flash</li><li>Negative sample included</li></ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="naming" id="naming">
+<!-- COPYRIGHT SECTION -->
+<section class="copyright" id="copyright">
   <div class="container">
-    <div class="sec-label">File Naming Convention</div>
-    <h2 class="sec-title">Consistent naming for every image</h2>
-    <div class="naming-box">
-      <div class="nf"><span>[CrackID]</span>_<span>[Type]</span>_<span>[Distance]</span>_<span>[Angle]</span>_<span>[Lighting]</span>_<span>[Number]</span>.jpg</div>
-      <div class="ne">Example: CR01_close_30cm_0deg_sun_01.jpg</div>
-      <div class="nl">
-        <div class="li"><span class="lk">CrackID</span><span class="lv">CR01, CR02 … CR041</span></div>
-        <div class="li"><span class="lk">Type</span><span class="lv">far / medium / close / scale / negative</span></div>
-        <div class="li"><span class="lk">Distance</span><span class="lv">30cm / 1m / 3m</span></div>
-        <div class="li"><span class="lk">Angle</span><span class="lv">0deg / +30deg / -30deg</span></div>
-        <div class="li"><span class="lk">Lighting</span><span class="lv">sun / shadow / flash</span></div>
-        <div class="li"><span class="lk">Number</span><span class="lv">01, 02, 03</span></div>
+    <div class="sec-label">Copyright & License</div>
+    <h2 class="sec-title">How you can use this dataset</h2>
+    <p class="sec-sub">This dataset is open-source but protected. You must credit The Hashemite University in any work using this data.</p>
+    <div class="copy-grid">
+      <div>
+        <div class="copy-card allowed" style="margin-bottom:20px">
+          <h3><div class="copy-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>What you CAN do</h3>
+          <ul class="rule-list">
+            <li class="rule-yes">Use for academic research and publications</li>
+            <li class="rule-yes">Train AI and machine learning models</li>
+            <li class="rule-yes">Share and redistribute with attribution</li>
+            <li class="rule-yes">Use for commercial AI products with credit</li>
+            <li class="rule-yes">Modify and build upon the dataset</li>
+            <li class="rule-yes">Use in university courses and teaching</li>
+          </ul>
+        </div>
+        <div class="copy-card notallowed">
+          <h3><div class="copy-icon" style="background:rgba(224,92,92,0.1);border-color:rgba(224,92,92,0.3);color:var(--red)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>What you CANNOT do</h3>
+          <ul class="rule-list">
+            <li class="rule-no">Claim ownership of the dataset or images</li>
+            <li class="rule-no">Remove or alter the copyright notice</li>
+            <li class="rule-no">Use without crediting The Hashemite University</li>
+            <li class="rule-no">Sell the raw dataset as your own product</li>
+            <li class="rule-no">Present data as collected by another institution</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="copy-card" style="margin-bottom:20px">
+          <h3><div class="copy-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>Required attribution text</h3>
+          <p style="font-size:13px;color:var(--text2);margin-bottom:12px">When using this dataset in any work, include this credit:</p>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:var(--mono);font-size:11px;color:var(--text2);line-height:1.8;border-left:3px solid var(--green)">
+            Almashakbeh, Y., Hayarat, I., Momani, D., &amp; Al-Ulaymat, R. (2026). <em>HU Infrastructure Cracks Dataset</em>. The Hashemite University, Jordan. https://hu-infrastructure-cracks.org. Licensed under CC BY 4.0.
+          </div>
+          <button class="btn-copy" style="margin-top:12px;font-size:11px" onclick="copyAttrib()">Copy attribution text</button>
+        </div>
+        <div class="copy-card">
+          <h3><div class="copy-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>Image watermark policy</h3>
+          <p style="font-size:13px;color:var(--text2);margin-bottom:12px">All downloaded images include an embedded copyright watermark:</p>
+          <div class="watermark-demo">
+            <div class="watermark-demo-img">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="opacity:.15"><path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/></svg>
+              <div class="wm-text">© The Hashemite University 2026 · CC BY 4.0 · hu-infrastructure-cracks.org</div>
+            </div>
+            <div class="wm-label">© The Hashemite University 2026 · CC BY 4.0</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contribute" id="contribute">
+<!-- DOWNLOAD SECTION -->
+<section class="download-sec" id="download">
   <div class="container">
-    <div class="sec-label">Community Contribution</div>
-    <h2 class="sec-title">Help grow the global dataset</h2>
-    <p class="sec-sub">Submit your own crack records from any infrastructure project worldwide. All contributions are reviewed and credited.</p>
-    <div class="contrib-grid">
-      <div class="cf">
-        <h3>Submit a Crack Record</h3>
-        <div class="upzone" onclick="document.getElementById('pu').click()">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="opacity:.4;margin:0 auto;display:block"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          <p>Drop crack photos here or click to browse</p>
-          <span>JPG, PNG — min 4000×3000 px recommended</span>
-          <input type="file" id="pu" multiple accept="image/*" style="display:none">
-        </div>
-        <div class="fr">
-          <div class="fg"><label>Crack Type</label><select><option>Longitudinal</option><option>Transverse</option><option>Diagonal</option><option>Hairline</option></select></div>
-          <div class="fg"><label>Severity</label><select><option>Minor</option><option>Moderate</option><option>Severe</option></select></div>
-        </div>
-        <div class="fr">
-          <div class="fg"><label>Structure Type</label><select><option>Column</option><option>Wall</option><option>Pavement</option><option>Beam</option></select></div>
-          <div class="fg"><label>Environment</label><select><option>Outdoor</option><option>Indoor</option></select></div>
-        </div>
-        <div class="fr">
-          <div class="fg"><label>Width (mm)</label><input type="number" placeholder="e.g. 2.5" step="0.1"></div>
-          <div class="fg"><label>Length (mm)</label><input type="number" placeholder="e.g. 150"></div>
-        </div>
-        <div class="fg"><label>Institution / Location</label><input type="text" placeholder="University name, city, country"></div>
-        <div class="fg"><label>Your Name & Email</label><input type="text" placeholder="Name — email@institution.edu"></div>
-        <div class="fg"><label>Notes</label><textarea placeholder="Additional observations..."></textarea></div>
-        <button class="btn-primary" style="width:100%;justify-content:center" onclick="alert('Thank you! Your submission will be reviewed by Dr. Yousef Almashakbeh within 3–5 business days.')">Submit Contribution</button>
+    <div class="sec-label">Download Dataset</div>
+    <h2 class="sec-title">Free download — with attribution</h2>
+    <p class="sec-sub">Download the full dataset including metadata, CSV, and image folders. You must agree to the license before downloading.</p>
+    <div class="dl-box">
+      <div class="dl-agreement">
+        <div class="agreement-title">License Agreement — CC BY 4.0</div>
+        By downloading this dataset, you agree that:<br><br>
+        <strong>1.</strong> You will credit <strong>Almashakbeh, Y., Hayarat, I., Momani, D., &amp; Al-Ulaymat, R. — The Hashemite University, Jordan</strong> in any publication, product, or work that uses this data.<br><br>
+        <strong>2.</strong> You will not remove the copyright watermark from any images.<br><br>
+        <strong>3.</strong> You will not claim ownership of this dataset or present it as your own collection.<br><br>
+        <strong>4.</strong> If you publish research using this dataset, you will cite: <em>hu-infrastructure-cracks.org</em><br><br>
+        <strong>5.</strong> You accept the full <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color:var(--green)">Creative Commons Attribution 4.0 License</a>.
       </div>
-      <div class="ci">
-        <div class="ic"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--green)"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Contribution guidelines</h4><p>Photos must follow the protocol: far, medium, close-up (0°, ±30°), scale, lighting, negative. Minimum 10 images per crack. All images must be original work.</p></div>
-        <div class="ic"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--green)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Review process</h4><p>All submissions are reviewed by the research team at The Hashemite University within 3–5 business days. Accepted contributions are credited in the dataset.</p></div>
-        <div class="ic"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--green)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Credit & attribution</h4><p>Contributors are listed in the dataset README and on this website. Your institution will be credited in every crack record you submit.</p></div>
-        <div class="ic"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--green)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Contact</h4><p>Dr. Yousef Almashakbeh · Civil Engineering<br>The Hashemite University, Zarqa, Jordan<br><span style="color:var(--green);font-family:var(--mono);font-size:12px">yousefalmashakbeh@hu.edu.jo</span></p></div>
+      <label class="dl-check">
+        <input type="checkbox" id="agreeCheck" onchange="toggleDownload()">
+        <span>I have read and agree to the <strong>CC BY 4.0 License Agreement</strong> above. I will properly credit The Hashemite University in all uses of this dataset.</span>
+      </label>
+      <div class="dl-btn-group">
+        <button class="dl-btn" id="dlMetadata" onclick="downloadMetadata()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v14M6 10l6 6 6-6"/><path d="M3 20h18"/></svg>
+          Download CSV Metadata
+        </button>
+        <button class="dl-btn" id="dlJSON" onclick="downloadJSON()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Download JSON Dataset
+        </button>
+        <a href="https://github.com/YousefAlmashakbeh/hu-infrastructure-cracks" target="_blank" class="dl-btn-outline" id="dlGitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          View on GitHub
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CITATION -->
 <section class="citation" id="citation">
   <div class="container">
     <div class="sec-label">How to Cite</div>
-    <h2 class="sec-title">Reference this dataset in your research</h2>
-    <p class="sec-sub">If you use this dataset in your work, please cite it using one of the formats below.</p>
-    <div class="cit-box">
-      <div class="cit-txt"><strong>APA:</strong><br>Almashakbeh, Y., Hayarat, I., Momani, D., &amp; Al-Ulaymat, R. (2025). <em>HU Infrastructure Cracks Dataset: An open-source concrete crack image collection from The Hashemite University</em> [Dataset]. https://hu-infrastructure-cracks.org</div>
-      <div class="cit-actions"><button class="btn-copy" onclick="copyAPA()">Copy APA</button><button class="btn-copy" onclick="copyBibtex()">Copy BibTeX</button></div>
+    <h2 class="sec-title">Required citation formats</h2>
+    <p class="sec-sub">Citation is required when using this dataset. Choose the format matching your journal requirements.</p>
+    <div class="cit-box" style="margin-top:32px">
+      <div class="cit-txt"><strong>APA (7th ed.):</strong><br>Almashakbeh, Y., Hayarat, I., Momani, D., &amp; Al-Ulaymat, R. (2026). <em>HU Infrastructure Cracks Dataset: An open-source concrete crack image collection from The Hashemite University</em> [Dataset]. The Hashemite University. https://hu-infrastructure-cracks.org</div>
+      <div class="cit-actions"><button class="btn-copy" onclick="copyAPA()">Copy APA</button></div>
     </div>
     <div class="cit-box" style="margin-top:14px">
-      <div class="cit-txt"><strong>BibTeX:</strong><br>@dataset{almashakbeh2025huinfra,<br>&nbsp;&nbsp;author = {Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and Al-Ulaymat, Ridwan},<br>&nbsp;&nbsp;title = {HU Infrastructure Cracks Dataset},<br>&nbsp;&nbsp;year = {2025},<br>&nbsp;&nbsp;institution = {The Hashemite University, Jordan},<br>&nbsp;&nbsp;url = {https://hu-infrastructure-cracks.org}<br>}</div>
+      <div class="cit-txt"><strong>BibTeX:</strong><br>@dataset{almashakbeh2026huinfra,<br>&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp;&nbsp;= {Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and Al-Ulaymat, Ridwan},<br>&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {{HU} Infrastructure Cracks Dataset},<br>&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {2026},<br>&nbsp;&nbsp;institution= {The Hashemite University, Jordan},<br>&nbsp;&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {https://hu-infrastructure-cracks.org},<br>&nbsp;&nbsp;license&nbsp;&nbsp;&nbsp;= {CC BY 4.0}<br>}</div>
+      <div class="cit-actions"><button class="btn-copy" onclick="copyBibtex()">Copy BibTeX</button></div>
+    </div>
+    <div class="cit-box" style="margin-top:14px">
+      <div class="cit-txt"><strong>IEEE:</strong><br>Y. Almashakbeh, I. Hayarat, D. Momani, and R. Al-Ulaymat, "HU Infrastructure Cracks Dataset," The Hashemite University, Jordan, 2026. [Online]. Available: https://hu-infrastructure-cracks.org</div>
+      <div class="cit-actions"><button class="btn-copy" onclick="copyIEEE()">Copy IEEE</button></div>
     </div>
   </div>
 </section>
 
+<!-- TEAM -->
 <section class="team" id="team">
   <div class="container">
     <div class="sec-label">Research Team</div>
     <h2 class="sec-title">The Hashemite University · Civil Engineering</h2>
     <div class="team-grid">
-      <div class="tc"><div class="ta">Y</div><h3>Dr. Yousef Almashakbeh</h3><p>Department of Civil Engineering</p><div class="role">Principal Investigator</div></div>
-      <div class="tc"><div class="ta">I</div><h3>Israa Hayarat</h3><p>Department of Civil Engineering</p><div class="role">Co-Investigator</div></div>
-      <div class="tc"><div class="ta">D</div><h3>Dirar Momani</h3><p>Department of Civil Engineering</p><div class="role">Co-Investigator</div></div>
-      <div class="tc"><div class="ta">R</div><h3>Ridwan Al-Ulaymat</h3><p>Department of Civil Engineering</p><div class="role">Co-Investigator</div></div>
-      <div class="tc"><div class="ta">🏛</div><h3>The Hashemite University</h3><p>Zarqa, Jordan — Est. 1995</p><div class="role">Host Institution</div></div>
+      <div class="tc"><div class="ta">Y</div><h3>Dr. Yousef Almashakbeh</h3><p>Civil Engineering Department</p><div class="role">Principal Investigator</div></div>
+      <div class="tc"><div class="ta">I</div><h3>Israa Hayarat</h3><p>Civil Engineering Department</p><div class="role">Co-Investigator</div></div>
+      <div class="tc"><div class="ta">D</div><h3>Dirar Momani</h3><p>Civil Engineering Department</p><div class="role">Co-Investigator</div></div>
+      <div class="tc"><div class="ta">R</div><h3>Ridwan Al-Ulaymat</h3><p>Civil Engineering Department</p><div class="role">Co-Investigator</div></div>
+      <div class="tc"><div class="ta">Rz</div><h3>Razan Al-Majali</h3><p>Civil Engineering Department</p><div class="role">Field Engineer / Data Collector</div></div>
       <div class="tc"><div class="ta">🌍</div><h3>Global Contributors</h3><p>Researchers Worldwide</p><div class="role">Community Members</div></div>
     </div>
   </div>
@@ -388,58 +409,115 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 40px
   <div class="fi">
     <div class="fb">
       <div class="nav-txt" style="font-size:15px">HU<span style="color:var(--green)">-</span>InfraCracks</div>
-      <p>Open-source infrastructure crack dataset maintained by The Hashemite University, Jordan. Free for research and AI development worldwide.</p>
+      <p>Open-source infrastructure crack dataset. The Hashemite University, Zarqa, Jordan. Licensed CC BY 4.0 — attribution required.</p>
       <div style="margin-top:12px"><span class="lic">CC BY 4.0</span></div>
     </div>
-    <div class="fl"><h4>Dataset</h4><a href="#dataset">Browse Records</a><a href="https://github.com/YousefAlmashakbeh/hu-infrastructure-cracks" target="_blank">GitHub Repository</a><a href="#">Download (Zenodo)</a><a href="#naming">Naming Convention</a></div>
-    <div class="fl"><h4>Research</h4><a href="#protocol">Collection Protocol</a><a href="#citation">How to Cite</a><a href="#">Published Papers</a><a href="#contribute">Contribute Data</a></div>
+    <div class="fl"><h4>Dataset</h4><a href="#dataset">Browse Records</a><a href="#download">Download</a><a href="https://github.com/YousefAlmashakbeh/hu-infrastructure-cracks" target="_blank">GitHub</a><a href="#protocol">Protocol</a></div>
+    <div class="fl"><h4>Legal</h4><a href="#copyright">License (CC BY 4.0)</a><a href="#citation">How to Cite</a><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Full CC License</a></div>
     <div class="fl"><h4>Institution</h4><a href="https://hu.edu.jo" target="_blank">Hashemite University</a><a href="#team">Research Team</a><a href="mailto:yousefalmashakbeh@hu.edu.jo">Contact PI</a></div>
   </div>
   <div class="fb2">
-    <span>© 2025 The Hashemite University · hu-infrastructure-cracks.org</span>
-    <span>Built for the global infrastructure research community</span>
+    <span class="copy-footer">© 2026 The Hashemite University — All dataset images and metadata are copyright of The Hashemite University, Jordan.</span>
+    <span>hu-infrastructure-cracks.org</span>
   </div>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-ov" id="crackModal" onclick="closeModal(event)">
   <div class="modal">
     <button class="m-close" onclick="document.getElementById('crackModal').classList.remove('open')">×</button>
     <h2 id="modalTitle"></h2>
+    <div class="modal-license">© 2026 The Hashemite University · CC BY 4.0 · Attribution required</div>
     <div class="mf" id="modalFields"></div>
-    <div style="margin-top:20px;display:flex;gap:10px">
-      <button class="btn-primary" style="flex:1;justify-content:center">Download Images</button>
-      <button class="btn-outline" style="flex:1;justify-content:center">Download JSON</button>
+    <div class="modal-dl-note">
+      <strong>⚠ Download notice:</strong> Images from this record are watermarked with copyright information. By downloading you agree to credit <strong>The Hashemite University</strong> in all publications and products. See the <a href="#copyright" style="color:var(--green)" onclick="document.getElementById('crackModal').classList.remove('open')">full license</a>.
     </div>
   </div>
 </div>
 
 <script>
 const cracks=[
-  {id:'CR01',type:'longitudinal',severity:'moderate',structure:'wall',env:'outdoor',width:3.2,length:240,images:12,date:'2025-04-09',location:'Building A, West Wing'},
-  {id:'CR02',type:'transverse',severity:'severe',structure:'column',env:'outdoor',width:5.8,length:180,images:14,date:'2025-04-09',location:'Main Entrance Column'},
-  {id:'CR03',type:'diagonal',severity:'minor',structure:'pavement',env:'outdoor',width:1.2,length:320,images:11,date:'2025-04-10',location:'North Parking Area'},
-  {id:'CR04',type:'hairline',severity:'minor',structure:'wall',env:'indoor',width:0.4,length:95,images:10,date:'2025-04-10',location:'Engineering Faculty, Room 101'},
-  {id:'CR05',type:'longitudinal',severity:'severe',structure:'beam',env:'outdoor',width:6.1,length:410,images:15,date:'2025-04-11',location:'Bridge Connector, Section B'},
-  {id:'CR06',type:'transverse',severity:'moderate',structure:'pavement',env:'outdoor',width:2.9,length:200,images:13,date:'2025-04-11',location:'Main Road, Gate 2'},
-  {id:'CR07',type:'diagonal',severity:'moderate',structure:'column',env:'outdoor',width:3.5,length:150,images:12,date:'2025-04-12',location:'Science Building, Pillar 4'},
-  {id:'CR08',type:'hairline',severity:'minor',structure:'wall',env:'indoor',width:0.3,length:60,images:10,date:'2025-04-12',location:'Library, East Wall'},
-  {id:'CR09',type:'longitudinal',severity:'moderate',structure:'pavement',env:'outdoor',width:2.1,length:280,images:11,date:'2025-04-13',location:'Sports Complex Road'},
-  {id:'CR10',type:'transverse',severity:'minor',structure:'wall',env:'outdoor',width:1.0,length:120,images:10,date:'2025-04-13',location:'Cafeteria, South Wall'},
-  {id:'CR11',type:'diagonal',severity:'severe',structure:'beam',env:'outdoor',width:7.2,length:380,images:15,date:'2025-04-14',location:'Parking Structure, Level 2'},
-  {id:'CR12',type:'hairline',severity:'minor',structure:'column',env:'outdoor',width:0.2,length:45,images:10,date:'2025-04-14',location:'Administration Building'},
+  {id:"CR01",date:"10/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR02",date:"10/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:2,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny+shadow",images:9},
+  {id:"CR03",date:"10/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:11},
+  {id:"CR04",date:"10/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"severe",width:1,length:23,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR05",date:"10/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:2.5,length:28,corrosion:false,water:true,dust:true,surface:"wet",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR06",date:"11/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1.5,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR07",date:"11/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR08",date:"11/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"severe",width:2,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR09",date:"11/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1.5,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny+shadow",images:8},
+  {id:"CR10",date:"11/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR11",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR12",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"severe",width:1,length:23,corrosion:false,water:true,dust:true,surface:"wet",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR13",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:2.5,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:5},
+  {id:"CR14",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"indoor",type:"transverse",severity:"moderate",width:1,length:21,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"indoor",images:10},
+  {id:"CR15",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"indoor",type:"transverse",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"indoor",images:10},
+  {id:"CR16",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"indoor",type:"transverse",severity:"severe",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"indoor",images:10},
+  {id:"CR17",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"indoor",type:"transverse",severity:"severe",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"indoor",images:9},
+  {id:"CR18",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"indoor",type:"longitudinal",severity:"severe",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"indoor",images:10},
+  {id:"CR19",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:15,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:9},
+  {id:"CR20",date:"14/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR21",date:"17/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:8},
+  {id:"CR22",date:"17/5/2026",location:"Faculty of Engineering",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"severe",width:2.5,length:23,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:9},
+  {id:"CR23",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:8},
+  {id:"CR24",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:15,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR25",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"longitudinal",severity:"moderate",width:1,length:15,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR26",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"longitudinal",severity:"severe",width:1,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:10},
+  {id:"CR27",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:8},
+  {id:"CR28",date:"17/5/2026",location:"Faculty of Engineering",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:7},
+  {id:"CR29",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:5},
+  {id:"CR30",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"severe",width:1,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:11},
+  {id:"CR31",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"severe",width:2,length:23,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR32",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR33",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR34",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"severe",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR35",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"severe",width:3,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR36",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:2,length:2.5,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:8},
+  {id:"CR37",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:2,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR38",date:"20/5/2026",location:"Lab",structure:"wall",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR39",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:2,length:1.5,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:7},
+  {id:"CR40",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"diagonal",severity:"severe",width:0.5,length:1,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:6},
+  {id:"CR41",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:2,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:9},
+  {id:"CR42",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"severe",width:2,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"sunny",images:9},
+  {id:"CR43",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"diagonal",severity:"severe",width:2.5,length:23,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:11},
+  {id:"CR44",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"severe",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR45",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"longitudinal",severity:"severe",width:1,length:2,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR46",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:1.5,length:1,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR47",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"moderate",width:1,length:2.5,corrosion:false,water:false,dust:false,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:10},
+  {id:"CR48",date:"21/5/2026",location:"Lab",structure:"pavement",env:"outdoor",type:"transverse",severity:"severe",width:2,length:2.5,corrosion:false,water:false,dust:true,surface:"dry",camera:"Canon EOS R2 DSLR",lighting:"shadow",images:11}
 ];
 
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
 
-function renderCracks(filter){
+function renderCracks(list){
   const g=document.getElementById('crackGrid');
   g.innerHTML='';
-  const list=filter==='all'?cracks:cracks.filter(c=>c.type===filter||c.severity===filter||c.structure===filter);
+  document.getElementById('resultsCount').textContent=`Showing ${list.length} record${list.length!==1?'s':''}`;
   list.forEach((c,i)=>{
     const d=document.createElement('div');
     d.className='c-card';
-    d.style.animationDelay=(i*.05)+'s';
-    d.innerHTML=`<div class="c-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/><path d="M3 7 Q6 4 9 7" opacity=".5"/><path d="M15 17 Q18 20 21 17" opacity=".5"/></svg><span>${c.id} · ${c.images} images</span></div><div class="c-body"><div class="c-id">${c.id} · ${c.date}</div><div class="c-type">${cap(c.type)} Crack</div><div class="c-tags"><span class="c-tag ${c.severity}">${cap(c.severity)}</span><span class="c-tag">${cap(c.structure)}</span><span class="c-tag">${cap(c.env)}</span></div><div class="c-meta"><div class="c-mi">Width<span>${c.width} mm</span></div><div class="c-mi">Length<span>${c.length} mm</span></div><div class="c-mi">Images<span>${c.images}</span></div></div></div>`;
+    d.style.animationDelay=(i*.03)+'s';
+    d.innerHTML=`
+      <div class="c-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/><path d="M3 7 Q6 4 9 7" opacity=".5"/><path d="M15 17 Q18 20 21 17" opacity=".5"/></svg>
+        <span>${c.id} · ${c.images} images</span>
+        <div class="c-watermark">© HU 2026 · CC BY 4.0</div>
+      </div>
+      <div class="c-body">
+        <div class="c-id">${c.id} · ${c.date}</div>
+        <div class="c-type">${cap(c.type)} Crack</div>
+        <div class="c-tags">
+          <span class="c-tag ${c.severity}">${cap(c.severity)}</span>
+          <span class="c-tag">${cap(c.structure)}</span>
+          <span class="c-tag">${cap(c.env)}</span>
+          <span class="c-tag">${c.location}</span>
+        </div>
+        <div class="c-meta">
+          <div class="c-mi">Width<span>${c.width} mm</span></div>
+          <div class="c-mi">Length<span>${c.length} mm</span></div>
+          <div class="c-mi">Images<span>${c.images}</span></div>
+        </div>
+      </div>`;
     d.onclick=()=>openModal(c);
     g.appendChild(d);
   });
@@ -448,7 +526,8 @@ function renderCracks(filter){
 function filterCracks(f,btn){
   document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  renderCracks(f);
+  const list=f==='all'?cracks:cracks.filter(c=>c.type===f||c.severity===f||c.structure===f);
+  renderCracks(list);
 }
 
 function openModal(c){
@@ -461,20 +540,70 @@ function openModal(c){
     <div class="mr"><span class="mk">Environment</span><span class="mv">${cap(c.env)}</span></div>
     <div class="mr"><span class="mk">Width</span><span class="mv">${c.width} mm</span></div>
     <div class="mr"><span class="mk">Length</span><span class="mv">${c.length} mm</span></div>
+    <div class="mr"><span class="mk">Surface</span><span class="mv">${cap(c.surface)}</span></div>
+    <div class="mr"><span class="mk">Dust</span><span class="mv">${c.dust?'Yes':'No'}</span></div>
+    <div class="mr"><span class="mk">Water</span><span class="mv">${c.water?'Yes':'No'}</span></div>
+    <div class="mr"><span class="mk">Corrosion</span><span class="mv">${c.corrosion?'Yes':'No'}</span></div>
+    <div class="mr"><span class="mk">Camera</span><span class="mv">${c.camera}</span></div>
+    <div class="mr"><span class="mk">Lighting</span><span class="mv">${cap(c.lighting)}</span></div>
     <div class="mr"><span class="mk">Total Images</span><span class="mv">${c.images}</span></div>
     <div class="mr"><span class="mk">Date Collected</span><span class="mv">${c.date}</span></div>
-    <div class="mr"><span class="mk">Location</span><span class="mv">${c.location}</span></div>
-    <div class="mr"><span class="mk">Institution</span><span class="mv">The Hashemite University, Jordan</span></div>
-    <div class="mr"><span class="mk">License</span><span class="mv">CC BY 4.0</span></div>`;
+    <div class="mr"><span class="mk">Location</span><span class="mv">${c.location}, The Hashemite University</span></div>
+    <div class="mr"><span class="mk">Engineer</span><span class="mv">Razan Al-Majali</span></div>
+    <div class="mr"><span class="mk">License</span><span class="mv">CC BY 4.0 — Attribution required</span></div>
+    <div class="mr"><span class="mk">Copyright</span><span class="mv">© 2026 The Hashemite University</span></div>`;
   document.getElementById('crackModal').classList.add('open');
 }
 
 function closeModal(e){if(e.target===document.getElementById('crackModal'))document.getElementById('crackModal').classList.remove('open')}
 
-function copyAPA(){navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2025). HU Infrastructure Cracks Dataset. The Hashemite University. https://hu-infrastructure-cracks.org');alert('APA citation copied!')}
-function copyBibtex(){navigator.clipboard.writeText('@dataset{almashakbeh2025huinfra,\n  author={Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and Al-Ulaymat, Ridwan},\n  title={HU Infrastructure Cracks Dataset},\n  year={2025},\n  institution={The Hashemite University, Jordan},\n  url={https://hu-infrastructure-cracks.org}\n}');alert('BibTeX copied!')}
+function toggleDownload(){
+  const agreed=document.getElementById('agreeCheck').checked;
+  ['dlMetadata','dlJSON','dlGitHub'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(agreed)el.classList.add('active'); else el.classList.remove('active');
+  });
+}
 
-renderCracks('all');
+function downloadMetadata(){
+  const headers=['crack_id','date','location','structure','environment','type','severity','width_mm','length_mm','surface','dust','water','corrosion','camera','lighting','total_images','copyright','license'];
+  const rows=cracks.map(c=>[c.id,c.date,c.location+' - The Hashemite University',c.structure,c.env,c.type,c.severity,c.width,c.length,c.surface,c.dust,c.water,c.corrosion,c.camera,c.lighting,c.images,'© 2026 The Hashemite University','CC BY 4.0 - Attribution required - hu-infrastructure-cracks.org']);
+  const csv=[headers,...rows].map(r=>r.join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='HU_InfraCracks_Dataset_v1_CC-BY-4.0.csv';
+  a.click();
+}
+
+function downloadJSON(){
+  const data={
+    dataset:'HU Infrastructure Cracks Dataset',
+    version:'1.0',
+    copyright:'© 2026 The Hashemite University, Jordan',
+    license:'Creative Commons Attribution 4.0 (CC BY 4.0)',
+    license_url:'https://creativecommons.org/licenses/by/4.0/',
+    citation:'Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2026). HU Infrastructure Cracks Dataset. The Hashemite University. https://hu-infrastructure-cracks.org',
+    website:'https://hu-infrastructure-cracks.org',
+    github:'https://github.com/YousefAlmashakbeh/hu-infrastructure-cracks',
+    total_cracks:48,
+    engineer:'Razan Al-Majali',
+    camera:'Canon EOS R2 DSLR',
+    cracks:cracks
+  };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='HU_InfraCracks_Dataset_v1_CC-BY-4.0.json';
+  a.click();
+}
+
+function copyAttrib(){navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2026). HU Infrastructure Cracks Dataset. The Hashemite University, Jordan. https://hu-infrastructure-cracks.org. Licensed under CC BY 4.0.');alert('Attribution text copied!');}
+function copyAPA(){navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2026). HU Infrastructure Cracks Dataset: An open-source concrete crack image collection from The Hashemite University [Dataset]. The Hashemite University. https://hu-infrastructure-cracks.org');alert('APA citation copied!');}
+function copyBibtex(){navigator.clipboard.writeText('@dataset{almashakbeh2026huinfra,\n  author    = {Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and Al-Ulaymat, Ridwan},\n  title     = {{HU} Infrastructure Cracks Dataset},\n  year      = {2026},\n  institution= {The Hashemite University, Jordan},\n  url       = {https://hu-infrastructure-cracks.org},\n  license   = {CC BY 4.0}\n}');alert('BibTeX copied!');}
+function copyIEEE(){navigator.clipboard.writeText('Y. Almashakbeh, I. Hayarat, D. Momani, and R. Al-Ulaymat, "HU Infrastructure Cracks Dataset," The Hashemite University, Jordan, 2026. [Online]. Available: https://hu-infrastructure-cracks.org');alert('IEEE citation copied!');}
+
+renderCracks(cracks);
 </script>
 </body>
 </html>
