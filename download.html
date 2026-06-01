@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download HU InfraCracks App</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0e0d;color:#e8f0eb;font-family:'Segoe UI',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{background:#111815;border:1px solid #2a3d35;border-radius:24px;padding:40px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.6)}
+.logo{width:72px;height:72px;border-radius:18px;background:#3ddc84;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.logo svg{width:40px;height:40px}
+h1{font-size:24px;font-weight:700;color:#e8f0eb;margin-bottom:6px}
+.univ{font-size:13px;color:#9ab5a5;margin-bottom:28px}
+.qr-wrap{background:#ffffff;border-radius:16px;padding:16px;display:inline-block;margin-bottom:24px}
+#qrcode canvas,#qrcode img{border-radius:8px}
+.url{font-family:monospace;font-size:14px;color:#3ddc84;background:#161e1a;border:1px solid #2a3d35;border-radius:8px;padding:10px 16px;margin-bottom:24px;word-break:break-all}
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:20px;color:#5e7a6a;font-size:12px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#2a3d35}
+.steps{text-align:left;margin-bottom:24px;display:flex;flex-direction:column;gap:0}
+.tab-btns{display:flex;border-radius:10px;overflow:hidden;border:1px solid #2a3d35;margin-bottom:16px}
+.tab-btn{flex:1;padding:10px;font-size:13px;background:transparent;color:#9ab5a5;border:none;cursor:pointer;transition:all .2s;font-family:inherit}
+.tab-btn.active{background:#3ddc84;color:#0a0e0d;font-weight:600}
+.step{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #1a2420}
+.step:last-child{border-bottom:none}
+.step-num{width:22px;height:22px;border-radius:50%;background:rgba(61,220,132,0.15);border:1px solid rgba(61,220,132,0.3);color:#3ddc84;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.step-text{font-size:13px;color:#9ab5a5;line-height:1.5}
+.step-text strong{color:#e8f0eb}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(61,220,132,0.1);border:1px solid rgba(61,220,132,0.25);border-radius:6px;padding:3px 10px;font-size:11px;color:#3ddc84;margin-bottom:20px}
+.copy-btn{width:100%;background:#3ddc84;color:#0a0e0d;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+.copy-btn:hover{background:#2ab86a}
+.share-row{display:flex;gap:10px;margin-top:12px}
+.share-btn{flex:1;background:transparent;border:1px solid #2a3d35;color:#9ab5a5;border-radius:10px;padding:11px;font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
+.share-btn:hover{border-color:#3ddc84;color:#3ddc84}
+.copied{display:none;color:#3ddc84;font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0a0e0d" stroke-width="2.5" stroke-linecap="round">
+      <path d="M3 12 Q6 8 9 12 Q12 16 15 12 Q18 8 21 12"/>
+      <path d="M3 7 Q6 4 9 7" opacity=".5"/>
+      <path d="M15 17 Q18 20 21 17" opacity=".5"/>
+    </svg>
+  </div>
+  <h1>HU InfraCracks</h1>
+  <p class="univ">The Hashemite University · Jordan</p>
+
+  <div class="qr-wrap">
+    <div id="qrcode"></div>
+  </div>
+
+  <div class="badge">📱 Scan to install • iPhone & Android</div>
+
+  <div class="url">hu-infrastructure-cracks.org</div>
+
+  <div class="tab-btns">
+    <button class="tab-btn active" onclick="showTab('ios',this)">🍎 iPhone</button>
+    <button class="tab-btn" onclick="showTab('android',this)">🤖 Android</button>
+  </div>
+
+  <div class="steps" id="ios-steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text">Open link in <strong>Safari</strong> browser</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Tap <strong>Share ⎙</strong> button at the bottom</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Tap <strong>"Add to Home Screen"</strong></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Tap <strong>"Add"</strong> — app icon appears! 🎉</div></div>
+  </div>
+
+  <div class="steps" id="android-steps" style="display:none">
+    <div class="step"><div class="step-num">1</div><div class="step-text">Open link in <strong>Chrome</strong> browser</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Tap <strong>Install</strong> button that appears automatically</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Or tap <strong>menu ⋮</strong> → "Add to Home Screen"</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">App installs instantly! 🎉</div></div>
+  </div>
+
+  <button class="copy-btn" onclick="copyLink()">📋 Copy App Link</button>
+  <p class="copied" id="copied">✓ Link copied!</p>
+  <div class="share-row">
+    <button class="share-btn" onclick="shareApp()">📤 Share</button>
+    <button class="share-btn" onclick="window.open('https://hu-infrastructure-cracks.org','_blank')">🌐 Open App</button>
+  </div>
+
+  <p style="font-size:11px;color:#5e7a6a;margin-top:20px">© 2026 The Hashemite University · CC BY 4.0<br>Free forever · No App Store needed</p>
+</div>
+
+<script>
+// Generate QR code
+new QRCode(document.getElementById('qrcode'), {
+  text: 'https://hu-infrastructure-cracks.org',
+  width: 200,
+  height: 200,
+  colorDark: '#0a0e0d',
+  colorLight: '#ffffff',
+  correctLevel: QRCode.CorrectLevel.H
+});
+
+function showTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('ios-steps').style.display = tab === 'ios' ? 'flex' : 'none';
+  document.getElementById('android-steps').style.display = tab === 'android' ? 'flex' : 'none';
+}
+
+function copyLink() {
+  navigator.clipboard.writeText('https://hu-infrastructure-cracks.org');
+  document.getElementById('copied').style.display = 'block';
+  setTimeout(() => document.getElementById('copied').style.display = 'none', 2000);
+}
+
+function shareApp() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'HU InfraCracks App',
+      text: 'Open-source crack dataset app — The Hashemite University',
+      url: 'https://hu-infrastructure-cracks.org'
+    });
+  } else {
+    copyLink();
+  }
+}
+</script>
+</body>
+</html>
