@@ -740,10 +740,21 @@ footer{
         <input type="checkbox" id="agreeCheck" onchange="toggleDownload()">
         <span data-en="I agree to the CC BY 4.0 License and will properly credit The Hashemite University." data-ar="أوافق على رخصة CC BY 4.0 وسأنسب العمل إلى الجامعة الهاشمية بشكل صحيح.">I agree to the CC BY 4.0 License and will properly credit The Hashemite University.</span>
       </label>
+      <!-- FULL DATASET -->
+      <div style="background:var(--gd);border:1px solid rgba(61,220,132,.25);border-radius:12px;padding:16px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div style="flex:1;min-width:180px">
+          <div style="font-size:13px;font-weight:500;color:var(--green);margin-bottom:3px" data-en="Full Dataset — 600+ Photos" data-ar="قاعدة البيانات الكاملة — 600+ صورة">Full Dataset — 600+ Photos</div>
+          <div style="font-size:11px;color:var(--text2)" data-en="All 48 crack records · Canon EOS R2 · High-res JPEG" data-ar="جميع السجلات الـ 48 · كاميرا Canon EOS R2 · JPEG عالي الدقة">All 48 crack records · Canon EOS R2 · High-res JPEG</div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/12R4V-lxc1W_q4Zz_u_gzio_ZamwCAHwv?usp=sharing" target="_blank" id="dlDrive" style="background:var(--green);color:#0a0e0d;border:none;border-radius:9px;padding:10px 20px;font-size:12px;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;opacity:.4;pointer-events:none;text-decoration:none;white-space:nowrap">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v14M6 10l6 6 6-6"/><path d="M3 20h18"/></svg>
+          <span data-en="Download Full Dataset" data-ar="تحميل قاعدة البيانات الكاملة">Download Full Dataset</span>
+        </a>
+      </div>
       <div class="dl-btn-group">
         <button class="dl-btn" id="dlCSV" onclick="downloadCSV()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v14M6 10l6 6 6-6"/><path d="M3 20h18"/></svg>
-          <span data-en="Download CSV" data-ar="تحميل CSV">Download CSV</span>
+          <span data-en="Metadata CSV" data-ar="ملف CSV">Metadata CSV</span>
         </button>
         <button class="dl-btn" id="dlJSON" onclick="downloadJSON()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -994,10 +1005,10 @@ footer{
     <div class="sec-label" data-en="Research Team" data-ar="فريق البحث">Research Team</div>
     <h2 class="sec-title" data-en="The Hashemite University · Civil Engineering" data-ar="الجامعة الهاشمية · الهندسة المدنية">The Hashemite University · Civil Engineering</h2>
     <div class="team-grid">
-      <div class="tc"><div class="ta">Y</div><h3 data-en="Dr. Yousef Almashakbeh" data-ar="د. يوسف المشاقبة">Dr. Yousef Almashakbeh</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Principal Investigator" data-ar="الباحث الرئيسي">Principal Investigator</div></div>
-      <div class="tc"><div class="ta">I</div><h3 data-en="Israa Hayarat" data-ar="إسراء حيارات">Israa Hayarat</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Co-Investigator" data-ar="باحث مشارك">Co-Investigator</div></div>
+      <div class="tc"><div class="ta">Y</div><h3 data-en="Dr. Yousef Almashakbeh" data-ar="د. يوسف المشعبكه">Dr. Yousef Almashakbeh</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Principal Investigator" data-ar="الباحث الرئيسي">Principal Investigator</div></div>
+      <div class="tc"><div class="ta">I</div><h3 data-en="Israa Hayarat" data-ar="إسراء حيرات">Israa Hayarat</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Co-Investigator" data-ar="باحث مشارك">Co-Investigator</div></div>
       <div class="tc"><div class="ta">D</div><h3 data-en="Dirar Momani" data-ar="ضرار المومني">Dirar Momani</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Co-Investigator" data-ar="باحث مشارك">Co-Investigator</div></div>
-      <div class="tc"><div class="ta">R</div><h3 data-en="Radawn AlOlimat" data-ar=" رضوان العليمات">Radawn AlOlimat</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Co-Investigator" data-ar="باحث مشارك">Co-Investigator</div></div>
+      <div class="tc"><div class="ta">R</div><h3 data-en="Ridwan Al-Ulaymat" data-ar="ريضوان العليمات">Ridwan Al-Ulaymat</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Co-Investigator" data-ar="باحث مشارك">Co-Investigator</div></div>
       <div class="tc"><div class="ta">Rz</div><h3 data-en="Razan Al-Majali" data-ar="رزان المجالي">Razan Al-Majali</h3><p data-en="Civil Engineering Dept." data-ar="قسم الهندسة المدنية">Civil Engineering Dept.</p><div class="role" data-en="Field Engineer" data-ar="مهندسة ميدانية">Field Engineer</div></div>
       <div class="tc"><div class="ta">🌍</div><h3 data-en="Global Contributors" data-ar="المساهمون العالميون">Global Contributors</h3><p data-en="Worldwide" data-ar="حول العالم">Worldwide</p><div class="role" data-en="Community Members" data-ar="أعضاء المجتمع">Community Members</div></div>
     </div>
@@ -1444,10 +1455,10 @@ function downloadJSON(){
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})); a.download='HU_InfraCracks_v1_CC-BY-4.0.json'; a.click();
 }
 
-function copyAttrib(){ navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & AlOlimat, R. (2026). HU Infrastructure Cracks Dataset. The Hashemite University. https://hu-infrastructure-cracks.org. CC BY 4.0.'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
-function copyAPA(){ navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & AlOlimat, R. (2026). HU Infrastructure Cracks Dataset [Dataset]. The Hashemite University. https://hu-infrastructure-cracks.org'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
-function copyBibtex(){ navigator.clipboard.writeText('@dataset{almashakbeh2026huinfra,\n  author={Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and AlOlimat, Radwan},\n  title={{HU} Infrastructure Cracks Dataset},\n  year={2026},\n  institution={The Hashemite University, Jordan},\n  url={https://hu-infrastructure-cracks.org},\n  license={CC BY 4.0}\n}'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
-function copyIEEE(){ navigator.clipboard.writeText('Y. Almashakbeh, I. Hayarat, D. Momani, and R. AlOlimat, "HU Infrastructure Cracks Dataset," The Hashemite University, Jordan, 2026. [Online]. Available: https://hu-infrastructure-cracks.org'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
+function copyAttrib(){ navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2026). HU Infrastructure Cracks Dataset. The Hashemite University. https://hu-infrastructure-cracks.org. CC BY 4.0.'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
+function copyAPA(){ navigator.clipboard.writeText('Almashakbeh, Y., Hayarat, I., Momani, D., & Al-Ulaymat, R. (2026). HU Infrastructure Cracks Dataset [Dataset]. The Hashemite University. https://hu-infrastructure-cracks.org'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
+function copyBibtex(){ navigator.clipboard.writeText('@dataset{almashakbeh2026huinfra,\n  author={Almashakbeh, Yousef and Hayarat, Israa and Momani, Dirar and Al-Ulaymat, Ridwan},\n  title={{HU} Infrastructure Cracks Dataset},\n  year={2026},\n  institution={The Hashemite University, Jordan},\n  url={https://hu-infrastructure-cracks.org},\n  license={CC BY 4.0}\n}'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
+function copyIEEE(){ navigator.clipboard.writeText('Y. Almashakbeh, I. Hayarat, D. Momani, and R. Al-Ulaymat, "HU Infrastructure Cracks Dataset," The Hashemite University, Jordan, 2026. [Online]. Available: https://hu-infrastructure-cracks.org'); alert(currentLang==='ar'?'تم النسخ!':'Copied!'); }
 
 
 
